@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pretendard.className} antialiased flex items-center justify-center`}
+        className={`${pretendard.className} antialiased flex items-center justify-center bg-transparent`}
       >
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
           {children}
