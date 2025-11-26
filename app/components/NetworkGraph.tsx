@@ -1,11 +1,58 @@
 'use client'
 
+import ForceGraph2D from 'react-force-graph-2d';
+import { NodeObject, LinkObject, GraphData } from 'react-force-graph-2d';
+import { useState, useEffect } from 'react';
+import { create } from "zustand"
 import { ChevronLeft, Expand } from 'lucide-react';
-import { Graph } from './LocalGraph';
-import { useEffect, useState } from 'react';
-import GraphRenderer from './GraphRenderer';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+interface State {
+  title: string | null;
+  id: string | null;
+  tooltip?: boolean;
+  setId: (title: string | null, id: string | null, tooltip?: boolean) => void;
+}
+
+export const useHoveredLink = create<State>((set) => ({
+  title: null,
+  id: null,
+  tooltip: true,
+  setId: (title: string | null, id: string | null, tooltip?: boolean) => set({ title: title, id: id, tooltip: tooltip}),
+}));
+
+export type Graph = {
+  nodes: Node[],
+  links: Link[]
+}
+
+export type Link = {
+  source: string | {id: string};
+  target: string | {id: string};
+}
+
+export type Node = {
+  id: string;
+  title: string;
+  depth?: number;
+  val?: number;
+}
+
+export function GraphRenderer({
+  data
+}: {
+  data: Graph | undefined;
+}) {
+  if (data === undefined) return (<div>no graph</div>);
+  const DynamicLocalGraph = dynamic(() => import('./LocalGraph'), {ssr: false});
+
+  return (
+    <div className="flex justify-center items-center">
+      <DynamicLocalGraph graphData={data} />
+    </div>
+  )
+}
 
 export function ControllerButton({
   role,
@@ -97,7 +144,7 @@ const graphData: Record<number, Graph> = {
   }
 }
 
-export default function GraphController() {
+export default function NetworkGraph() {
   const [depth, setDepth] = useState(1);
 
   return (

@@ -2,7 +2,7 @@
 
 import { maruburi, pretendard } from '../fonts';
 import { Calendar, Tag, Key } from "lucide-react";
-import RingLink from './RingLink';
+import RingLink from './ContinuousPostNav';
 import ParamKwButton from './ParamKwButton';
 import { Suspense } from 'react';
 

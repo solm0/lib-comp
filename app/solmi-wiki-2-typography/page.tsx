@@ -1,3 +1,5 @@
+import SolmiWiki2Typography from "../components/SolmiWiki2Typography";
+
 export default function Page() {
-  return
+  return <SolmiWiki2Typography />
 }

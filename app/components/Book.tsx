@@ -3,15 +3,12 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Book({
-  pages,
-}: {
-  pages: string[];
-}) {
+export default function Book() {
+  const pages = Array.from({ length: 14 }, (_, i) => `/npc_${i + 1}.png`);
   const [page, setPage] = useState(0);
 
   return (
-    <>
+    <div className="flex flex-col">
       <div className="flex w-full">
         <div
           className="flex-1 relative h-auto flex items-center justify-center shrink-0"
@@ -68,6 +65,6 @@ export default function Book({
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react"
-import { usePathname, useSearchParams, useRouter} from "next/navigation";
+import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { maruburi } from "../fonts";
 
@@ -65,7 +65,7 @@ export function PostList({
   )
 }
 
-export default function BlogLists() {
+export default function ChronPostList() {
   const [hovered, setHovered] = useState<string | null>(null);
   const posts: Post[] = [
     {
@@ -101,7 +101,7 @@ export default function BlogLists() {
   ];
 
   return (
-    <section className={`${maruburi.className} font-serif font-semibold relative w-full pb-8 overflow-y-scroll focus:outline-hidden`}>
+    <section className={`${maruburi.className} font-serif font-semibold relative w-full pb-8 overflow-y-scroll overflow-x-hidden focus:outline-hidden`}>
       {posts && posts.map((note) => (
         <PostList
           key={note.id}

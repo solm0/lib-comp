@@ -1,15 +1,21 @@
 'use client'
 
-export default function SequenceNav({
-  links, index, setIndex
-}: {
-  links:string[];
-  index: number;
-  setIndex: (index:number) => void;
-}) {
+import { useState } from "react";
+
+export const links = [
+  '0424-0430 알바니아, 북마케도니아 여행 (발칸 1부)',
+  'Day 1. 0424. 티라나 도착',
+  'Day 2. 0425. 티라나와 두러스',
+  'Day 3. 0426. 스코페 도착',
+  'Day 4. 0427. 스코페에서 홀로 되다',
+  'Day 5. 0428. 다시 티라나로'
+]
+
+export default function SequenceNav() {
+  const [index, setIndex] = useState(1);
   const prev = links[index-1];
   const next = links[index+1];
-
+  
   return (
     <div className="flex w-full h-auto gap-2 text-sm leading-6 select-none">
       {prev ?

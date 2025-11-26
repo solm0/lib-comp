@@ -71,7 +71,7 @@ function Player({
   )
 }
 
-export default function PlayerScene(){
+export function CpniaPlayer(){
   const [actionKey, setActionKey] = useState(0);
 
   return (

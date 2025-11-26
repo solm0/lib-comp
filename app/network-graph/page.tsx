@@ -1,3 +1,5 @@
+import NetworkGraph from "../components/NetworkGraph";
+
 export default function Page() {
-  return
+  return <NetworkGraph />
 }
