@@ -15,7 +15,7 @@ const Number = ({num}:{num:number}) => {
 
 export default function NoteSample() {
   return (
-    <div className="fixed top-50 bg-[#F8F7FB] p-8 h-auto w-[calc(100%*2/3-2rem)] rounded-lg border border-zinc-200">
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 bg-[#F8F7FB] p-8 h-auto w-full max-w-200 rounded-lg border border-zinc-200">
       <div className="absolute w-full h-full ml-100">
         <div className="absolute w-auto top-0 flex gap-2 items-center">
           <Number num={3} />
