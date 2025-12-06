@@ -1,5 +1,5 @@
 export default function Home() {
-  const comps = ['book', 'chron-post-list', 'continuous-post-nav', 'cpnia-buttons', 'cpnia-logotype', 'cpnia-player', 'floor-plan', 'go-to-top', 'image-scroll-scale', 'network-graph', 'keyword-cmp', 'search-cmp', 'tag-cmp', 'sequence-nav','solmi-wiki-2-colors','solmi-wiki-2-typography','toc']
+  const comps = ['book', 'chron-post-list', 'continuous-post-nav', 'cpnia-buttons', 'cpnia-logotype', 'cpnia-player', 'floor-plan', 'go-to-top', 'image-scroll-scale', 'network-graph', 'keyword-cmp', 'search-cmp', 'tag-cmp', 'sequence-nav','solmi-wiki-2-colors','solmi-wiki-2-typography','toc', 'note-sample']
 
   return (
     <div className="w-full h-full flex flex-wrap overflow-y-scroll">
